@@ -1,5 +1,9 @@
 document.getElementById('map-info-form').addEventListener('submit', async (event) => {
     event.preventDefault();
+
+    // 추가할 때 로딩 표시 보이기
+    const loading = document.querySelector('#loading');
+    loading.style.display = 'block';
     
     const name = document.getElementById('name').value;
     const latitude = document.getElementById('latitude').value;
@@ -50,6 +54,8 @@ document.getElementById('map-info-form').addEventListener('submit', async (event
       document.getElementById('name').value = '';
       document.getElementById('latitude').value = '';
       document.getElementById('longitude').value = '';
+      // 추가가 완료되면 로딩 표시 숨기기
+      loading.style.display = 'none';
     } catch (error) {
       console.error('Error loading map info:', error);
     }
