@@ -7,7 +7,7 @@ document.getElementById('map-info-form').addEventListener('submit', async (event
   
     // Send the data to the server
     try {
-      const response = await fetch('./.netlify/functions/sqlite-handler', {
+      const response = await fetch('/netlify/functions/sqlite-handler', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ document.getElementById('map-info-form').addEventListener('submit', async (event
   
   async function loadMapInfo() {
     try {
-      const response = await fetch('./.netlify/functions/sqlite-handler', {
+      const response = await fetch('/netlify/functions/sqlite-handler', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
