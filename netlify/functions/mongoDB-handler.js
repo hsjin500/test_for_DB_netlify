@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
     if (data.action === 'add') {
       const { name, latitude, longitude } = data;
 
-      // Add the map info to the collection
+      // 컬렉션에 지도 정보를 추가
       await collection.insertOne({ name, latitude, longitude });
 
       return {
@@ -20,7 +20,7 @@ exports.handler = async (event, context) => {
         body: JSON.stringify({ message: 'Data saved successfully' }),
       };
     } else if (data.action === 'get_all') {
-      // Get all map info from the collection
+      // 컬렉션에서 지도 정보를 가져옴
       const docs = await collection.find().toArray();
 
       return {
@@ -49,7 +49,7 @@ exports.handler = async (event, context) => {
 
 
 /* 
-환경 변수 MONGO_URI와 MONGO_DB_NAME을 설정해야 합니다.
+환경 변수 MONGO_URI와 MONGO_DB_NAME을 설정해야 합니다.(-->  netlify에서 설정함.)
 MONGO_URI는 MongoDB 클러스터의 주소이며, MONGO_DB_NAME은 사용할 데이터베이스의 
 이름입니다.
 
