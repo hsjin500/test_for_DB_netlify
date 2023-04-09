@@ -87,7 +87,9 @@ document.getElementById('map-info-form').addEventListener('submit', async (event
       deleteButton.addEventListener('click', deleteMapInfo); // 삭제 버튼에 이벤트 리스너를 등록합니다.
       deleteButtonCell.appendChild(deleteButton);
       tr.appendChild(deleteButtonCell);
-  
+      
+      console.log(info.id);
+
       // 행을 표에 추가합니다.
       tableBody.appendChild(tr);
     });
