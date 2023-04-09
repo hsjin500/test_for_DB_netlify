@@ -1,4 +1,4 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
 
 exports.handler = async (event, context) => {
   let client;
@@ -28,11 +28,11 @@ exports.handler = async (event, context) => {
         body: JSON.stringify(docs),
       };
     } else if (data.action === 'delete') {
-      const { _id } = data;
+      const { id } = data;
     
       // 컬렉션에서 지도 정보를 삭제함
-      await collection.deleteOne({ _id });
-      console.log(_id);
+      await collection.deleteOne({ _id: ObjectId(id) });
+
       return {
         statusCode: 200,
         body: JSON.stringify({ message: 'Data deleted successfully' }),
