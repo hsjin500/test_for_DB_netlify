@@ -1,8 +1,6 @@
 {
-    "name": "netlify-functions",
-    "dependencies": {
-      "sqlite": "^4.0.9",
-      "sqlite3": "^5.0.2"
-    }
+  "name": "netlify-functions",
+  "dependencies": {
+    "mongoose": "^6.1.3"
   }
-  
+}
