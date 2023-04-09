@@ -27,6 +27,16 @@ exports.handler = async (event, context) => {
         statusCode: 200,
         body: JSON.stringify(docs),
       };
+    } else if (data.action === 'delete') {
+      const { id } = data;
+    
+      // 컬렉션에서 지도 정보를 삭제함
+      await collection.deleteOne({ _id: ObjectId(id) });
+    
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ message: 'Data deleted successfully' }),
+      };
     } else {
       return {
         statusCode: 400,
