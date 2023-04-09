@@ -4,7 +4,7 @@ const { open } = require('sqlite');
 exports.handler = async (event, context) => {
   try {
     const db = await open({
-      filename: '/DB/my-database.db',
+      filename: 'my-database.db',
       driver: sqlite3.Database,
     });
 
@@ -42,5 +42,8 @@ exports.handler = async (event, context) => {
       statusCode: 500,
       body: JSON.stringify({ error: 'An error occurred in the server.' }),
     };
+  } finally {
+    // close the database connection
+    await db.close();
   }
 };
