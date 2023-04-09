@@ -4,25 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Map Info</title>
+  <link rel="stylesheet" href="/css/css1.css">
 </head>
 <body>
   <h1>Save Map Info</h1>
   <form id="map-info-form">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
-    <br>
     <label for="latitude">Latitude:</label>
     <input type="number" step="any" id="latitude" name="latitude" required>
-    <br>
     <label for="longitude">Longitude:</label>
     <input type="number" step="any" id="longitude" name="longitude" required>
-    <br>
     <button type="submit">Save</button>
   </form>
 
   <!-- 표를 추가합니다. -->
   <h2>Map Info List</h2>
-  <table id="map-info-table" border="1">
+  <table id="map-info-table">
     <thead>
       <tr>
         <th>ID</th>
