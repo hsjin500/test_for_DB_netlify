@@ -37,9 +37,10 @@ exports.handler = async (event, context) => {
       };
     }
   } catch (error) {
+    console.error('Error in sqlite-handler:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: error.message }),
+      body: JSON.stringify({ error: 'An error occurred in the server.' }),
     };
   }
 };
