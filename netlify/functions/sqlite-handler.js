@@ -2,8 +2,9 @@ const sqlite3 = require('sqlite3').verbose();
 const { open } = require('sqlite');
 
 exports.handler = async (event, context) => {
+  let db;
   try {
-    const db = await open({
+    db = await open({
       filename: '/opt/build/test_for_DB_netlify/my-database.db',
       driver: sqlite3.Database,
     });
@@ -43,7 +44,9 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({ error: 'An error occurred in the server.' }),
     };
   } finally {
-    // close the database connection
-    await db.close();
+    if (db) {
+      // close the database connection
+      await db.close();
+    }
   }
 };
