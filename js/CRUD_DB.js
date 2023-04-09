@@ -61,7 +61,7 @@ document.getElementById('map-info-form').addEventListener('submit', async (event
   
       // ID 열 추가
       const idCell = document.createElement('td');
-      idCell.textContent = info.id;
+      idCell.textContent = info._id;
       tr.appendChild(idCell);
   
       // Name 열 추가
@@ -83,12 +83,10 @@ document.getElementById('map-info-form').addEventListener('submit', async (event
       const deleteButtonCell = document.createElement('td');
       const deleteButton = document.createElement('button');
       deleteButton.textContent = 'x';
-      deleteButton.setAttribute('data-id', info.id); // 삭제 버튼에 ID를 설정합니다.
+      deleteButton.setAttribute('data-id', info._id); // 삭제 버튼에 ID를 설정합니다.
       deleteButton.addEventListener('click', deleteMapInfo); // 삭제 버튼에 이벤트 리스너를 등록합니다.
       deleteButtonCell.appendChild(deleteButton);
       tr.appendChild(deleteButtonCell);
-      
-      console.log(info.id);
 
       // 행을 표에 추가합니다.
       tableBody.appendChild(tr);
