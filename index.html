@@ -7,26 +7,27 @@
   <link rel="stylesheet" href="/css/css1.css">
 </head>
 <body>
-  <h1>Save Map Info</h1>
+  <h1>Adding Solarcow Location</h1>
   <form id="map-info-form">
-    <label for="name">Name:</label>
+    <label for="name">Location</label>
     <input type="text" id="name" name="name" required>
-    <label for="latitude">Latitude:</label>
+    <label for="latitude">Latitude</label>
     <input type="number" step="any" id="latitude" name="latitude" required>
-    <label for="longitude">Longitude:</label>
+    <label for="longitude">Longitude</label>
     <input type="number" step="any" id="longitude" name="longitude" required>
-    <button type="submit">Save</button>
+    <button type="submit">add</button>
   </form>
 
   <!-- 표를 추가합니다. -->
-  <h2>Map Info List</h2>
+  <h2>Solarcow Location List</h2>
   <table id="map-info-table">
     <thead>
       <tr>
         <th>ID</th>
-        <th>Name</th>
+        <th>Location</th>
         <th>Latitude</th>
         <th>Longitude</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody></tbody>
