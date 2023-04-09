@@ -29,7 +29,9 @@ exports.handler = async (event, context) => {
       };
     } else if (data.action === 'delete') {
       const { id } = data;
-    
+      console.log(data);
+      console.log(id);
+      
       // 컬렉션에서 지도 정보를 삭제함
       await collection.deleteOne({ _id: ObjectId(id) });
 
