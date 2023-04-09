@@ -3,12 +3,8 @@ const { MongoClient } = require('mongodb');
 exports.handler = async (event, context) => {
   let client;
   try {
-    MONGO_URI = 'mongodb+srv://rainbirdgeo:<fpdlsqjem>@cluster0.aqpckau.mongodb.net/?retryWrites=true&w=majority';
-    MONGO_DB_NAME = 'test_db';
-    // client = await MongoClient.connect(process.env.MONGO_URI, { useUnifiedTopology: true });
-    client = await MongoClient.connect(MONGO_URI, { useUnifiedTopology: true });
-    // const db = client.db(process.env.MONGO_DB_NAME);
-    const db = client.db(MONGO_DB_NAME);
+    client = await MongoClient.connect(process.env.MONGO_URI, { useUnifiedTopology: true });
+    const db = client.db(process.env.MONGO_DB_NAME);
     const collection = db.collection('location');
 
     const data = JSON.parse(event.body);
