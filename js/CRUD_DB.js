@@ -46,6 +46,10 @@ document.getElementById('map-info-form').addEventListener('submit', async (event
   
       // 표에 데이터를 표시합니다.
       displayMapInfo(mapInfo);
+      // input 요소들의 값을 비웁니다.
+      document.getElementById('name').value = '';
+      document.getElementById('latitude').value = '';
+      document.getElementById('longitude').value = '';
     } catch (error) {
       console.error('Error loading map info:', error);
     }
