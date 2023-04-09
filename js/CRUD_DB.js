@@ -124,8 +124,6 @@ document.getElementById('map-info-form').addEventListener('submit', async (event
       const result = await response.json();
       console.log('Data deleted successfully:', result);
       updateMapInfo(); // 데이터 삭제 후 표를 업데이트합니다.
-      // 삭제가 완료되면 로딩 표시 숨기기
-      loading.style.display = 'none';
     } catch (error) {
       console.error('Error deleting data:', error);
     }
