@@ -4,7 +4,7 @@ const { open } = require('sqlite');
 exports.handler = async (event, context) => {
   try {
     const db = await open({
-      filename: 'my-database.db',
+      filename: '/opt/build/test_for_DB_netlify/my-database.db',
       driver: sqlite3.Database,
     });
 
