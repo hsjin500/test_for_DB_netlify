@@ -31,7 +31,7 @@ exports.handler = async (event, context) => {
       const { id } = data;
 
       //컬렉션에서 지도 정보를 삭제함
-      await collection.deleteOne({ _id: ObjectId(id) });
+      await collection.deleteOne({ _id: new ObjectId(id) });
 
       return {
         statusCode: 200,
