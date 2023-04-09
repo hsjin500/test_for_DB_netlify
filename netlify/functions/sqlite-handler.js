@@ -4,7 +4,7 @@ const { open } = require('sqlite');
 exports.handler = async (event, context) => {
   try {
     const db = await open({
-      filename: 'my-database.db',
+      filename: '/DB/my-database.db',
       driver: sqlite3.Database,
     });
 
